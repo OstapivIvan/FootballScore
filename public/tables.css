@@ -1,0 +1,279 @@
+body{
+    background-image: url('images/field.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    float: right;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 2px;
+    
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr{
+    background-color: #f2f2f2;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+}
+
+.crest {
+    max-width: 15px;
+    margin-right: 10px;
+}
+.ind-crest{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.ind-info h1, .country-info h1{
+    display: flex;
+    align-items: center;
+}
+
+header{
+    background-color: aliceblue;
+      display: flex;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0px 50px;
+}
+
+li{
+    display: inline-block;
+    color:rgb(9, 41, 70);
+    font-size: 18px;
+    padding:0px 10px;
+    margin: 0px 15px;
+    size: 15px;
+    transition: all 0.5s ease;
+}
+
+nav{
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav li:hover{
+    color: rgb(74, 29, 171);
+}
+
+ul{
+    margin: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container-tables {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    
+}
+
+.sidebar {
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: white;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: style;
+}
+
+.sidebar li {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.content{
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content h3{
+    margin: 5px 0px;
+}
+
+.result-container{
+    background-color: aliceblue;
+    padding: 10px;
+    width: 80%;
+    height: 72vh;
+    overflow: auto;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+}
+.match-container {
+    border: 1px solid #87ceeb;
+    padding: 5px; margin: 5px;
+    text-align: center;
+}
+.match-info {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.score{
+    display: inline-block; 
+    background-color: #00b7ff;
+    color: aliceblue;
+    text-align: center;
+    grid-column: 2;
+    padding: 3px;
+    border: 1px solid #00b7ff;
+    border-radius: 8px; 
+}
+.highlight {
+    background-color: green;
+    border-color: green;
+}
+
+.home-info{
+    display: inline-block;    
+    text-align: right; 
+    margin-right: 10px;
+}
+.away-info{
+    display: inline-block;    
+    text-align: left; 
+    margin-left: 10px; 
+}
+
+.team-logo {
+    max-width: 20px; max-height: 20px;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.tour-container {
+    border: 1px solid #87ceeb;
+    background-color: gold;
+    padding: 10px;
+    margin: 10px;
+} 
+
+#filter-form {
+    padding: 20px;
+    background-color: aliceblue;
+    border: 1px solid aliceblue;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#datepicker-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.ui-datepicker {
+    color: aliceblue; 
+    background-color: aliceblue;
+    border-color: aliceblue;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid aliceblue;
+}
+
+.ui-datepicker tr, th{
+    background-color: aliceblue;
+}
+
+.ui-widget-header {
+    border: 1px solid aliceblue;
+    background: aliceblue;
+    color: #333333;
+    font-weight: bold;
+}
+
+.ui-datepicker-calendar {
+    color: #ff0000; 
+}
+
+.ui-datepicker .ui-state-default {
+    color: #000000;
+}
+
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+	background-color: aliceblue;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1px solid #87ceeb;
+	background: aliceblue;
+	font-weight: normal;
+	color: #2b2b2b;
+} 
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #dad55e;
+    background: #fffa90;
+    color: #000000;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #003eff;
+    background: #007fff;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-left , .ui-corner-br {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}

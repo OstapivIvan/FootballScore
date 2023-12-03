@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/tables.css">
+    
+    <title>Tables</title>
+</head>
+<body>
+    <%- include('navigation.ejs') %>
+    <nav>
+        <h2>Оберіть лігу</h2>
+        <br>
+        <ul id="league-menu">
+            <li><a href="/tables/EPL">Premier League</a></li>
+            <li><a href="/tables/LaLiga">La Liga</a></li>
+            <li><a href="/tables/Bundesliga">Bundesliga</a></li>
+            <li><a href="/tables/SeriaA">Seria A</a></li>
+            <li><a href="/tables/Ligue1">Ligue 1</a></li>
+            <li><a href="/tables/Eredivisie">Eredivise</a></li>
+            <li><a href="/tables/PrimeiraLiga">Primeira Liga</a></li>
+            <li><a href="/tables/UCL">UCL</a></li>
+            <li><a href="/tables/ELC">Championship</a></li>
+        </ul>
+    </nav>
+    <div class="container-tables">
+        <div class="sidebar">
+            <ul>
+                <li><a href="/tables/:league">Турнірна таблиця</a></li>
+                <li><a href="/tables/:league/topscorers">Бомдардири</a></li>
+                <li><a href="/tables/:league/results">Результати</a></li>
+                <li><a href="/tables/:league/calendar">Календар</a></li>
+            </ul>
+        </div>
+
+        <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    let leagueId = window.location.pathname.split('/')[2]; 
+                    let menuItems = document.querySelectorAll("#league-menu li a");
+                    let sidebarLinks = document.querySelectorAll(".sidebar li a");
+                    if (leagueId) {
+                        document.querySelector(".sidebar").style.display = "block";
+                        menuItems.forEach(function(item) {
+                            item.href = item.href.replace(":league", leagueId);
+                            if (item.href.includes(leagueId)) {
+                                item.style.borderBottom = "2px solid #007bff";
+                            }
+                        });
+                        sidebarLinks.forEach(function(item) {
+                            item.href = item.href.replace(":league", leagueId);
+                        });
+                    } else {
+                        document.querySelector(".sidebar").style.display = "none";
+                    }
+                });
+        </script>
+
+        <div class="content">
+            <% if (typeof league !== 'undefined' && typeof standings !== 'undefined') { %>
+                <%- include('standing.ejs') %>
+            <% }  %>
+            <% if (typeof league !== 'undefined' && typeof topScorers !== 'undefined') { %>
+                <%- include('topscorers.ejs') %>
+            <% }  %>
+            <% if (typeof league !== 'undefined' && typeof result !== 'undefined') { %>
+                <%- include('results.ejs') %>
+            <% }  %>
+            <% if (typeof league !== 'undefined' && typeof calendar !== 'undefined') { %>
+                <%- include('calendar.ejs') %>
+            <% }  %>
+        </div>
+    </div>
+</body>
+</html>

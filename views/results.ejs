@@ -1,0 +1,28 @@
+<% if (typeof league !== 'undefined' && typeof result !== 'undefined') { %>
+    <div class="result-container">
+        <% result.matchData.reverse().forEach(tour => { %>
+            <div class="tour-container">
+                Тур: <%= tour.tour %>
+            </div>
+            <% tour.matches.forEach(match => { %>
+                <div class="match-container">
+                    <div class="match-info">
+                        <span class="home-info">
+                            <span><%= match.homeTeam.name %></span>
+                            <img class="team-logo" src="<%= match.homeTeam.crest %>" alt="Team Crest">
+                        </span>
+                        <div class="score">
+                            <%= match.score.fullTime.home %> : <%= match.score.fullTime.away %>
+                        </div>
+                        <span class="away-info">
+                            <img class="team-logo" src="<%= match.awayTeam.crest %>" alt="Team Crest">
+                            <span><%= match.awayTeam.name %></span>
+                        </span>
+                    </div>
+                </div>
+            <% }); %>
+        <% }); %>
+    </div>
+<% } else { %>
+    <p>No result matches available.</p>
+<% } %>

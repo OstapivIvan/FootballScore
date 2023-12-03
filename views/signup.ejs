@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign up</title>
+</head>
+<body class="signup">
+
+    <div class="sign-form">
+        <form action="/signup" method="post" id="signup" enctype="multipart/form-data" >
+            <h2>Sign up</h2>
+            <div class="form-control">
+                <input type="text" id="username" placeholder="Username" name="username" value="" pattern="[A-Za-z]+" required>
+                <small class="error-message" id="username-error">Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <input type="email" id="Email" placeholder="Email" name="Email" value="" required>
+                <small class="error-message" id="email-error">Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <input type="password" id="Password" placeholder="Password" name="Password" value="" pattern=".{8,}" required>
+                <small class="error-message" id="password-error">Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <input type="password" id="Confirm_password" placeholder="Confirm Password" name="confirm_password" value="" required>
+                <small class="error-message" id="confirm-password-error">Error Message</small>
+            </div>
+            
+
+            <div class="form-control premium-status">
+                <input type="checkbox" id="premiumStatus" name="premiumStatus">
+                <label for="premiumStatus">Premium Status</label>
+            </div>
+            
+            <br> <br>
+            <small id="errorContainer" class="<%= error ? 'error' : '' %>"><%= error %></small>
+            <button type="button" id="button">Enter</button>
+            <br> <br>
+            <span>
+                <a href="/login">Log in</a>
+                <a href="/">Skip</a>
+            </span>
+        </form>
+    </div>
+
+    <div class="confirmation-message-container" id="confirmationMessageContainer" style="display: none;">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const confirmationParam = urlParams.get('confirmation');
+                const confirmationMessageContainer = document.getElementById('confirmationMessageContainer');
+                const formContainer = document.getElementById('signup');
+        
+                if (confirmationParam === 'required') {
+                    confirmationMessageContainer.style.display = 'block';
+                    formContainer.style.display = 'none';
+                    confirmationMessageContainer.innerHTML = '<p>Підтвердіть реєстрацію.</p>';
+                } else if (confirmationParam === 'successfully') {
+                    confirmationMessageContainer.style.display = 'block';
+                    formContainer.style.display = 'none';
+                    confirmationMessageContainer.innerHTML = confirmationMessageContainer.innerHTML = `
+                    <p>Реєстрація пройшла успішно. Натисніть на посилання нижче, щоб перейти на головну сторінку.</p>
+                    <a href="/">Перейти на головну</a>
+                `;
+                }
+            });
+        </script>
+    </div>
+    
+    <script src="validationFunc.js"></script>
+    <script src="signupVal.js"></script>
+</body>
+</html>

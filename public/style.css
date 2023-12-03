@@ -1,0 +1,177 @@
+body{
+    margin: 0px;
+    font-family:Georgia, Times, 'Times New Roman', serif;
+    background-image: url('images/field.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+.login{
+    background-color: rgb(21, 0, 67);
+}
+
+ul{
+    margin: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header{
+  background-color: aliceblue;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: space-around;
+    padding: 0px 50px;
+}
+.nav-toggle{
+  display: inline-block;
+  font-size: 2rem;
+  width: 10px;
+  color: #111;
+  margin-left: 10px;
+  display:none;
+}
+
+.main-nav li{
+    display: inline-block;
+    color:rgb(9, 41, 70);
+    font-size: 18px;
+    padding:0px 10px;
+    margin: 0px 15px;
+    size: 15px;
+    transition: all 0.5s ease;
+}
+.main-nav li:hover{
+    color: rgb(74, 29, 171);
+}
+
+
+.container{
+    width: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; 
+}
+.container h1{
+    font-size: 48px;
+    color:rgb(21, 0, 67);
+    margin-bottom: 5px;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 0 auto; 
+    color: rgb(21, 0, 67) ;
+}
+.form-container input[type="text"], input[type="tel"]{
+    width: 100%;
+    height: 25px;
+    border-radius:7px;
+    background-color: rgb(235, 234, 234);
+    border:4px solid rgb(235, 234, 234) ;
+}
+.form-container label{
+    font-size: 15px;
+}
+
+.form-container .input-form input[type="submit"] {
+    color: aliceblue;
+    width: 150px;
+    height: 40px;
+    border:4px solid blue ;
+    background-color: blue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:7px;
+    font-size: 16px;
+}
+
+.form-container .input-form label,
+.form-container .input-form input {
+  margin: 5px 0px;
+}
+
+.form-container .input-form h1{
+    text-align: center;
+}
+
+.carousel {
+    width: 50%;
+    max-width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin: 5px auto;
+  }
+  
+  .carousel-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+  }
+  
+  @keyframes carousel-animation {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+    }
+    53% {
+      opacity: 0;
+    }
+  }
+  
+  .carousel-item:nth-child(1) {
+    animation: carousel-animation 12s infinite;
+  }
+  
+  .carousel-item:nth-child(2) {
+    animation: carousel-animation 12s infinite 4s;
+  }
+  
+  .carousel-item:nth-child(3) {
+    animation: carousel-animation 12s infinite 8s;
+  }
+
+  .profile-container {
+    background-color: aliceblue;
+    text-align: left;
+    height: 70vh;
+    width: 60vh;
+    margin: auto;    
+    padding: 20px;
+    border-radius: 8px;      
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}

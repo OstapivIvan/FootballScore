@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <%- include('navigation.ejs') %>
+    <div class="profile-container">
+        <% if (username) { %>
+            <h2>Профіль</h2>
+            <p>Привіт, <%= username %>!</p>
+            <p>Email: <%= email %></p>
+            <% if (premiumStatus == 1) { %>
+                <p>У вас преміум акаунт ми можете користуватися можливістю створенням власних чемпіонатів.</p>
+            <% } else { %>
+                <p>У вас звичайний акаунт.</p>
+                <p>Якщо ви хочете отримати можливість створювати власні чемпіонати натисніть на кнопку нижче.</p>
+            <% } %>
+        <% } else { %>
+            <p>Вам потрібно увійти у акаунт, щоб отримати доступ до профілю.</p>
+        <% } %>
+        
+    </div>
+</body>
+</html>

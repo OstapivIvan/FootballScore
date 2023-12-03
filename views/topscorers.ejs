@@ -1,0 +1,28 @@
+<% if (typeof league !== 'undefined' && typeof topScorers !== 'undefined') { %>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Player Name</th>
+            <th>Team Name</th>
+            <th>Goals</th>
+            <th>Penalties</th>
+            <th>Assists</th>
+            <th>Matches</th>
+        </tr>
+
+        <% topScorers.scorers.forEach((scorer, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= scorer.player.name %></td>
+                <td class="team-info">
+                    <img class="crest" src="<%= scorer.team.crest %>" alt="Team Crest">
+                    <span><%= scorer.team.name %></span>
+                </td>
+                <td><%= scorer.goals %></td>
+                <td><%= scorer.penalties %></td>
+                <td><%= scorer.assists %> </td>
+                <td><%= scorer.playedMatches %></td>
+            </tr>
+        <% }); %>
+    </table>
+<% } %>
