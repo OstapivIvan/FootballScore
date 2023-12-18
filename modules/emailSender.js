@@ -52,3 +52,4 @@ async function sendConfirmationEmail(username, email, uniqueKey, password, premi
 module.exports = {
     sendConfirmationEmail,
 };
+

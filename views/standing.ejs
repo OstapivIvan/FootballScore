@@ -1,5 +1,4 @@
 <% if (typeof league !== 'undefined' && typeof standings !== 'undefined' && standings.length > 0) { %>
-    <div>
         <% standings.forEach(groupStanding => { %>
             <table>
                 <% if(groupStanding.group.group)  { %>
@@ -39,7 +38,6 @@
             </table>
     
         <% }); %>
-    </div>
 <% } else { %>
     <p>No standings data available.</p>
 <% } %>

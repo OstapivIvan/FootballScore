@@ -16,21 +16,6 @@ class DatabaseOperations {
         });
     }
 
-    static async checkIfEmailExists(email) {
-        return new Promise((resolve, reject) => {
-            const sql = 'SELECT * FROM users WHERE email = ?';
-            db.query(sql, [email], (err, results) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    const userExists = results.length > 0;
-                    const userData = userExists ? results[0] : null;
-                    resolve({ exists: userExists, user: userData });
-                }
-            });
-        });
-    }
-
     static async saveUniqueKeyToDatabase(uniqueKey, email) {
         return new Promise((resolve, reject) => {
             const sql = 'INSERT INTO unique_keys (key_value) VALUES (?)';
@@ -52,6 +37,23 @@ class DatabaseOperations {
                     reject(err);
                 } else {
                     resolve(results.length > 0);
+                }
+            });
+        });
+    }
+
+    
+    static async checkIfEmailExists(email) {
+        return new Promise((resolve, reject) => {
+            const sql = 'SELECT * FROM users WHERE email = ?';
+
+            db.query(sql, [email], (err, results) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    const userExists = results.length > 0;
+                    const userData = userExists ? results[0] : null;
+                    resolve({ exists: userExists, user: userData });
                 }
             });
         });

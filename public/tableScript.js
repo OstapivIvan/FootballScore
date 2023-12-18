@@ -33,7 +33,6 @@ async function makeApiRequest(url, headers = {}) {
         const response = await axios.get(url, { headers: { ...defaultHeaders, ...headers } });
         return response; 
     } catch (error) {
-        console.error('API Error:', error);
         throw new Error('API Error');
     }
 }

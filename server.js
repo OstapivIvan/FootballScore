@@ -4,8 +4,6 @@ const multer = require('multer');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-require('dotenv').config();
-
 const DatabaseOperations = require('./public/databaseFunctions.js');
 
 const loginRoute = require('./routes/loginRoute');
@@ -13,6 +11,8 @@ const signupRoute = require('./routes/signupRoute');
 const tableRoute = require('./routes/tablesRoute');
 const datapickerRoute = require('./routes/datepickerRoute');
 const startRoute = require('./routes/startRoute');
+
+require('dotenv').config();
 
 const app = express();
 
@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(multer().none());
 app.use(express.json());
-app.use(express.static("static"));
 
 app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));

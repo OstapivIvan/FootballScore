@@ -13,7 +13,7 @@ router.post('/login', async (req, res) => {
 
         if (!exists) {
             const error = 'Incorrect email or password';
-            return res.status(401).render('login.ejs', { error });
+            return res.status(401).render('login', { error });
         }
 
         const storedHash = user.password;
@@ -40,3 +40,5 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+
+
